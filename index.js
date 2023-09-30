@@ -9,11 +9,12 @@
 
 console.log('funguju!');
 
-const changeLight = () =>{
-    const change = document.querySelector(".bulb")
-    change.classList.add("bulb--on")
-}
-
-document.addEventListener('keydown', changeLight);
-
-
+const bulbElement = document.querySelector('.bulb');
+const turnBulb = () => {
+  if (bulbElement.classList.contains('bulb--on')) {
+    bulbElement.classList.remove('bulb--on');
+  } else {
+    bulbElement.classList.add('bulb--on');
+  }
+};
+document.addEventListener('keydown', turnBulb);
